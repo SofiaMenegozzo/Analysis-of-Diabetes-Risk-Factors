@@ -2,7 +2,7 @@
 
 > **At a glance** · ~230,000 BRFSS survey records, 21 predictors · Python (cleaning) + R (analysis) · logistic regression with **AUC 0.80** · decision threshold lowered from 0.5 to 0.3 to recover diabetic cases under 17% class imbalance
 >
-> 📄 Full report (Italian): [`diabete.pdf`](diabete.pdf)
+> 📄 [English summary](diabete_summary_EN.pdf) · full report in Italian: [`diabete.pdf`](diabete.pdf)
 
 This project investigates the main factors associated with the presence of diabetes through descriptive, inferential, and predictive statistical analysis.
 The aim of the study is to explore the relationship between diabetes and a set of clinical, behavioral, demographic, and socioeconomic characteristics, identifying the variables that show the strongest associations with the disease. The analysis also includes the development of a logistic regression model to estimate the probability of diabetes for each individual.
@@ -56,7 +56,9 @@ Finally, the dataset does not contain detailed clinical or genetic information t
 Despite these limitations, the study provides a useful overview of the main factors associated with diabetes and demonstrates the application of statistical and predictive techniques to real-world health data.
 
 ### Repository Contents
-diabete.pdf — complete report of the statistical analysis.
+diabete.pdf — complete report of the statistical analysis (Italian).
+
+diabete_summary_EN.pdf — 3-page summary in English.
 
 analisi_diabete.R — R script containing the statistical analysis, logistic regression model, and visualizations.
 

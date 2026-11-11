@@ -212,7 +212,7 @@ model_aic
 prob <- predict(model, type = "response")
 roc_obj <- roc(df$diabetes, prob)
 plot(roc_obj, col = "blue", lwd = 2, main = "ROC Curve - Modello Logistico")
-abline(a = 0, b = 1, lty = 2, col = "red")
+# (pROC already draws the chance diagonal; abline(0, 1) would be mirrored on its reversed specificity axis)
 
 # AUC
 auc_value <- auc(roc_obj)
@@ -312,9 +312,6 @@ plot(roc_test,
      col = "blue",
      lwd = 3,
      main = "ROC Curve - Test Set")
-abline(a = 0, b = 1,
-       lty = 2,
-       col = "red")
 auc(roc_test)
 
 # CROSS VALIDATION
