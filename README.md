@@ -1,4 +1,9 @@
 ## Analysis of Diabetes Risk Factors
+
+> **At a glance** · ~230,000 BRFSS survey records, 21 predictors · Python (cleaning) + R (analysis) · logistic regression with **AUC 0.80** · decision threshold lowered from 0.5 to 0.3 to recover diabetic cases under 17% class imbalance
+>
+> 📄 Full report (Italian): [`diabete.pdf`](diabete.pdf)
+
 This project investigates the main factors associated with the presence of diabetes through descriptive, inferential, and predictive statistical analysis.
 The aim of the study is to explore the relationship between diabetes and a set of clinical, behavioral, demographic, and socioeconomic characteristics, identifying the variables that show the strongest associations with the disease. The analysis also includes the development of a logistic regression model to estimate the probability of diabetes for each individual.
 
@@ -16,7 +21,7 @@ The dataset used in this project is the Diabetes Health Indicators Dataset, publ
 
 The variables considered in the analysis include general, physical, and mental health status, cardiovascular and metabolic characteristics such as high blood pressure, high cholesterol and BMI, as well as lifestyle factors including physical activity, fruit and vegetable consumption, smoking and alcohol consumption. Demographic and socioeconomic variables such as age, sex, education and income are also included.
 
-The target variable is diabetes, which is represented as a binary variable indicating whether an individual has diabetes (1) or does not have diabetes (0).
+The target variable is diabetes, which is represented as a binary variable indicating whether an individual has diabetes (1) or does not have diabetes (0). In the original dataset the outcome has three levels (no diabetes, prediabetes, diabetes); prediabetes and diabetes were merged into the positive class. Duplicate records were removed, which reduces the original 253,680 rows to 229,781.
 
 ### Methodology
 The analysis was developed using both Python and R, combining data preprocessing with statistical analysis and predictive modelling.
@@ -57,9 +62,14 @@ analisi_diabete.R — R script containing the statistical analysis, logistic reg
 
 clean_diabetes_v2.csv — cleaned dataset used for the analysis.
 
-pulizia_dati_python.rtf — documentation of the data preprocessing performed in Python.
+data_cleaning.py — Python script for data cleaning and preprocessing.
 
 analisi_diabete.RData — R workspace containing the objects generated during the analysis.
+
+### How to reproduce
+1. Download `diabetes_012_health_indicators_BRFSS2015.csv` from [Kaggle](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset) into the repository folder.
+2. Run `python data_cleaning.py` to produce `clean_diabetes_v2.csv` (already included, so this step is optional).
+3. Open R in the repository folder and run `analisi_diabete.R`. Required packages: tidyverse, corrplot, pROC, caret, broom, reshape2, car, pscl, ResourceSelection, PRROC, smotefamily.
 
 ### Tools
 The project combines Python and R for different stages of the analysis. 

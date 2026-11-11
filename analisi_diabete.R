@@ -14,7 +14,7 @@ library(PRROC)
 library(smotefamily)
 
 #IMPORTAZIONE DEL DATASET 
-df<-read.csv("~/Downloads/clean_diabetes_v2.csv")
+df<-read.csv("clean_diabetes_v2.csv")  # run from the repository folder
 head(df)
 str(df)
 dim(df)
